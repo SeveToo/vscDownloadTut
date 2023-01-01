@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <title>SeveTo</title>
+</head>
+<style>
+  :root {
+    --bgcolor: white;
+    --color1: black;
+    --color2: #0066b8;
+    --color3: green;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(white,#f0f0f0) ;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+  a{
+    color: var(--color2);
+    margin: auto;
+    scroll-behavior: smooth;
+  }
+  header h1,
+  h4 {
+    margin: 0;
+    font-size: 3.9vw;
+    line-height: 100%;
+  }
+
+  h4 {
+    line-height: 70%;
+  }
+
+  header h3 {
+    text-align: left;
+    font-size: 4.1vw;
+    color: #0066b8;
+    margin: 0;
+    line-height: 100%;
+  }
+
+  header h4 {
+    text-align: right;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1vw 0;
+    margin-top: 1.2vw;
+  }
+  .kr{
+    width: 70%;
+    height: .5vw;
+    background: var(--color2);
+  }
+  header .kr{
+    width: 75%;
+    margin: auto;
+    margin-top: 1.6vw;
+  }
+  section h2 {
+    font-size: 2.5vw;
+    width: 80vw;
+    margin: auto;
+    margin-top: 0.8vw;
+  }
+
+  img {
+    width: 100px;
+    margin: 30px;
+    pointer-events: none;
+    box-shadow: 2px 2px 10px var(--color2);
+    background-color: #f0f0f0
+  }
+  .cyferka {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    position: sticky;
+    width: 6vw;
+    align-self: flex-start;
+  }
+
+  #arrow {
+    transition: .3s;
+    cursor: pointer;
+    width: 6vw;
+    margin: 2rem 0;
+  }
+  #arrow2{
+    width: 10vw;
+    margin: 3vw auto 1vw auto;
+    animation: .7s animacja infinite ease-out;
+  }
+  @keyframes animacja {
+    0%{
+      transform: translate(0,0px);
+    }
+    50%{
+      transform: translate(0,10px);
+    }
+    100%{
+      transform: translate(0,0px);
+    }
+  }
+
+  #hide {
+    width: 80%;
+    border: 1vw solid #0066b8;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 1s;
+  }
+
+  .dwazdj {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .small {
+    width: 20vw;
+  }
+
+  .mid {
+    width: 40%;
+    height: auto;
+  }
+
+  .big {
+    width: 60vw;
+  }
+
+  .galeriap {
+    width: 70vw;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .galeriap img {
+    width: 40%;
+    margin: 1rem;
+  }
+
+  .blue {
+    color: #0066b8;
+  }
+
+  .green {
+    color: green;
+  }
+
+  #hide h2 {
+    width: auto;
+  }
+  h5 {
+    color: var(--color2);
+    margin-bottom: 0px;
+    font-size: 4vw;
+    text-align: left;
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.clock{
+    margin: .1rem auto 1.2rem auto;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid #091921;
+    box-shadow: 0 -15px 15px rgba(255,255,255,.05),
+                inset 0 -15px 15px rgba(255,255,255,.05),
+                0 15px 15px rgba(0,0,0,.3),
+                inset 0 15px 15px rgba(0,0,0,.3);
+}
+.clock:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 50%;
+    z-index: 10;
+}
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+.clock .hour, .hr{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc{
+    width: 230px;
+    height: 230px;
+}
+.clock .hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+}
+.clock .hr:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff105e;
+    z-index: 6;
+    border-radius: 6px 6px 0 0;
+}
+.clock .mn:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: var(--color2);
+    z-index:7;
+    border-radius: 6px 6px 0 0;
+}
+.clock .sc:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: black;
+    z-index: 8;
+    border-radius: 6px 6px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .clock {
+    transform: scale(.7);
+    margin: .1rem auto 1rem auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .clock {
+    display: none;
+  }
+}
+</style>
+
+<body>
+  <header>
+    <div class="clock">
+      <div class="hour">
+          <div class="hr" id="hr"></div>
+      </div>
+      <div class="min">
+          <div class="mn" id="mn"></div>
+      </div>
+      <div class="sec">
+          <div class="sc" id="sc"></div>
+      </div>
+  </div>
+    <h1>Instalacja i przygotowanie</h1>
+    <h3>Visual Studio Code</h3>
+    <h4>do pracy w grupie</h4>
+    <div class="kr"></div>
+  </header>
+  <a href="#p1">
+  <svg id="arrow2" xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 58 34">
+  <defs>
+    <style>
+      .e79f74cb-6a88-4d61-9076-80dee57be4e1 {
+        fill: #0066b8;
+      }
+    </style>
+  </defs>
+  <title></title>
+  <g id="b1dbd1de-255d-4f51-b522-f8b639037214" data-name="Warstwa 2">
+    <g id="a12c998a-351b-47a3-8dc6-b3829aa6f82f" data-name="Warstwa 1">
+      <polygon class="e79f74cb-6a88-4d61-9076-80dee57be4e1"
+        points="28.7 12.11 53 0 58 18 29 34 0 18 5 0 28.7 12.11" />
+    </g>
+  </g>
+</svg></a>
+
+  <section id="p1">
+    <h5>Pobieranie</h5>
+    <svg class="cyferka" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.43 187.43">
+      <defs>
+        <style>
+          .f79f0534-eba9-405c-9858-01c7b2b61218 {
+            font-size: 120px;
+            fill: #0066b8;
+            stroke-width: 10px;
+            font-family: MyriadPro-Regular, Myriad Pro;
+          }
+
+          .b3fc04ec-34c8-4456-b6d8-2833fa60f097,
+          .f79f0534-eba9-405c-9858-01c7b2b61218 {
+            stroke: #0066b8;
+            stroke-miterlimit: 10;
+          }
+
+          .b3fc04ec-34c8-4456-b6d8-2833fa60f097 {
+            fill: none;
+            stroke-width: 21px;
+          }
+        </style>
+      </defs>
+      <title>Zasób 1</title>
+      <g id="ef6e280d-e567-4709-9b61-7062c30c438d" data-name="Warstwa 2">
+        <g id="b0b3b96a-173a-4ea0-8e99-dd64ec4dd963" data-name="Warstwa 1"><text
+            class="f79f0534-eba9-405c-9858-01c7b2b61218" transform="translate(62.94 128.93)">1</text>
+          <rect class="b3fc04ec-34c8-4456-b6d8-2833fa60f097" x="10.5" y="10.5" width="166.43" height="166.43" />
+        </g>
+      </g>
+    </svg>
+    <h2>Wchodzimy na stronę Visual Studio Code w zakładkę download <br><a target="blank"
+        href="https://code.visualstudio.com/download">Visual Studio Code Download</a></h2>
+    <a target="blank" href="https://code.visualstudio.com/download">
+      <img class="big" src="images/p1z1.png" alt="">
+    </a>
+    <h2 class="rozwin">Jeśli nie wiesz ilu bitowy jest twój system windows:</h2>
+    <svg onclick="myFunction()" style="transform: rotate(0deg);" id="arrow" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 58 34">
+      <defs>
+        <style>
+          .e79f74cb-6a88-4d61-9076-80dee57be4e1 {
+            fill: #0066b8;
+          }
+        </style>
+      </defs>
+      <title></title>
+      <g id="b1dbd1de-255d-4f51-b522-f8b639037214" data-name="Warstwa 2">
+        <g id="a12c998a-351b-47a3-8dc6-b3829aa6f82f" data-name="Warstwa 1">
+          <polygon class="e79f74cb-6a88-4d61-9076-80dee57be4e1"
+            points="28.7 12.11 53 0 58 18 29 34 0 18 5 0 28.7 12.11" />
+        </g>
+      </g>
+    </svg>
+    <div id="hide" style="display: none;">
+      <h2 style="margin-top: 50px;">Klikasz prawym przyciskiem myszy na Ten
+        Komputer</h2>
+      <div class="dwazdj">
+        <img class="mid" src="images/p1z2.png" alt="">
+        <img style="box-shadow: none; background: transparent;" width="5wv" src="images/mause.svg" alt="">
+      </div>
+      <h2>Klikamy Właściwości</h2>
+      <img src="images/p1z3.png" alt="" class="big">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1503.25 140.95">
+        <defs>
+          <style>
+            .f839ea4f-54e2-4b6d-bc6e-17a6f0f5cec6 {
+              fill: none;
+              stroke: #daff00;
+              stroke-miterlimit: 10;
+              stroke-width: 6px;
+            }
+
+            .bc6deb9e-00a0-49f8-a1e7-cb8658a0860f,
+            .f1bad39a-404d-4c41-a5f9-5a00e4d71827 {
+              font-size: 2rem;
+              font-family: ArialNarrow-Bold, Arial;
+              font-weight: 700;
+            }
+
+            .b95f75d3-3eeb-4635-8db7-adb4809d2802 {
+              fill: #daff00;
+            }
+
+            .bc6deb9e-00a0-49f8-a1e7-cb8658a0860f {
+              fill: #fff;
+            }
+          </style>
+        </defs>
+        <title>Zasób 36</title>
+        <g id="be6409cc-68b3-445f-b338-e4eca17f2990" data-name="Warstwa 2">
+          <g id="b1362e92-9333-406f-89b3-88c355eacd6e" data-name="Warstwa 1">
+            <rect class="f839ea4f-54e2-4b6d-bc6e-17a6f0f5cec6" x="3.25" y="54.95" width="1497" height="83" /><text
+              class="f1bad39a-404d-4c41-a5f9-5a00e4d71827" transform="translate(16.66 109.68)">Jeśli typ systemu będzie
+              inny niż 64-bitowy przy pobieraniu należy wybrać x32</text>
+            <rect class="b95f75d3-3eeb-4635-8db7-adb4809d2802" width="216" height="55" /><text
+              style="pointer-events: none;" class="bc6deb9e-00a0-49f8-a1e7-cb8658a0860f"
+              transform="translate(38.02 43.85)">Uwaga:</text></g>
+        </g>
+      </svg>
+
+    </div>
+    <h2>Teraz wystarczy kliknąć odpowiednią wersję np:</h2>
+
+    <div class="dwazdj"><img src="images/z1.png" alt="" class="mid"><img src="images/z2.png" alt="" class="mid"></div>
+    <div class="kr"></div>
+  </section>
+
+  <section class="p2">
+    <h5>Instalacja</h5>
+    <svg class="cyferka" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.43 187.43">
+      <defs>
+        <style>
+          .aac49172-5304-4af0-9701-8af6b6de8c3e {
+            font-size: 120px;
+            fill: #0066b8;
+            stroke-width: 10px;
+            font-family: MyriadPro-Regular, Myriad Pro;
+          }
+
+          .aac49172-5304-4af0-9701-8af6b6de8c3e,
+          .bf63bc51-667c-401d-a8a2-880c73a346aa {
+            stroke: #0066b8;
+            stroke-miterlimit: 10;
+          }
+
+          .bf63bc51-667c-401d-a8a2-880c73a346aa {
+            fill: none;
+            stroke-width: 21px;
+          }
+        </style>
+      </defs>
+      <title>nr2</title>
+      <g id="ff190b27-d20a-42a6-986f-23ccdac2750b" data-name="Warstwa 2">
+        <g id="bfb2fe31-b230-4b0d-8046-d68c1754900f" data-name="Warstwa 2"><text
+            class="aac49172-5304-4af0-9701-8af6b6de8c3e" transform="translate(62.93 128.93)">2</text>
+          <rect class="bf63bc51-667c-401d-a8a2-880c73a346aa" x="10.5" y="10.5" width="166.43" height="166.43" />
+        </g>
+      </g>
+    </svg>
+
+    <h2>Następnie otwieramy pobrany plik</h2>
+    <div class="galeriap">
+      <img src="images/z3.png" alt="">
+      <img src="images/p2z2.png" alt="">
+      <img src="images/p2z3.png" alt="">
+      <img src="images/p2z4.png" alt="">
+      <img src="images/p2z5.png" alt="">
+    </div>
+
+    <h2>Instalacja zakończona teraz uruchamiamy porgram, który jeśli postępowałęś/łaś według powyższych instrukcji to
+      skrót <br>
+      <span class="blue"> Visual Studio Code</span> powinien być na pulpicie</h2>
+    <img class="small" src="images/p2z6.png" alt="">
+    <div class="kr"></div>
+  </section>
+
+  <section class="p3">
+    <h5>Konfiguracja</h5>
+    <svg class="cyferka" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.43 187.43">
+      <defs>
+        <style>
+          .a54fa67d-83e8-44bf-bd84-0d9a2be0ee4f {
+            font-size: 120px;
+            fill: #0066b8;
+            stroke-width: 10px;
+            font-family: MyriadPro-Regular, Myriad Pro;
+          }
+
+          .a54fa67d-83e8-44bf-bd84-0d9a2be0ee4f,
+          .aecebe50-5540-4016-a049-591adff396aa {
+            stroke: #0066b8;
+            stroke-miterlimit: 10;
+          }
+
+          .aecebe50-5540-4016-a049-591adff396aa {
+            fill: none;
+            stroke-width: 21px;
+          }
+        </style>
+      </defs>
+      <title>nr3</title>
+      <g id="a7ade0d8-505b-4297-9a50-0d12e2174744" data-name="Warstwa 2">
+        <g id="b6fc92b0-f9b0-433c-9ed0-c5b6f48c9931" data-name="Warstwa 3"><text
+            class="a54fa67d-83e8-44bf-bd84-0d9a2be0ee4f" transform="translate(62.94 128.93)">3</text>
+          <rect class="aecebe50-5540-4016-a049-591adff396aa" x="10.5" y="10.5" width="166.43" height="166.43" />
+        </g>
+      </g>
+    </svg>
+    <h2>Klikamy Extensions lub <span class="blue">Ctrl+Shift+x</span></h2>
+    <img class="big" src="images/p3z1.png" alt="">
+
+    <h2>Instalujemy rozszerzenia <span class="blue">Live Share</span> i <span class="blue">Live Serwer</span> klikając <span class="green">Install</span></h2>
+    <img class="mid" src="images/p3z2.png" alt="">
+
+    <h2><span class="green">Po zainstalowaniu rozszerzeń najlepiej jest zrestartować program </span><br> <br>
+      Następnie klikamy LiveShare, co spowoduje otwarcie przeglądarki, w której będziemy musieli się zalogować.</h2>
+      <img class="big" src="images/p3z3.png" alt="">
+      <div class="kr"></div>
+  </section>
+  <section class="p4">
+    <h5>Logowanie</h5>
+    <svg class="cyferka" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.43 187.43">
+      <defs>
+        <style>
+          .a8b1e0e0-0a2c-4062-a75e-061a923bde5b {
+            font-size: 120px;
+            fill: #0066b8;
+            stroke-width: 10px;
+            font-family: MyriadPro-Regular, Myriad Pro;
+          }
+
+          .a8b1e0e0-0a2c-4062-a75e-061a923bde5b,
+          .b8c865b9-c8e7-4929-9be4-21e6c0c0c1ef {
+            stroke: #0066b8;
+            stroke-miterlimit: 10;
+          }
+
+          .b8c865b9-c8e7-4929-9be4-21e6c0c0c1ef {
+            fill: none;
+            stroke-width: 21px;
+          }
+        </style>
+      </defs>
+      <title>nr4</title>
+      <g id="f9f98b21-e67b-4cfc-87e4-6ad9a27e395b" data-name="Warstwa 2">
+        <g id="afb79fdb-b245-4206-a643-6e5526ea869e" data-name="Warstwa 4"><text
+            class="a8b1e0e0-0a2c-4062-a75e-061a923bde5b" transform="translate(62.94 128.93)">4</text>
+          <rect class="b8c865b9-c8e7-4929-9be4-21e6c0c0c1ef" x="10.5" y="10.5" width="166.43" height="166.43" />
+        </g>
+      </g>
+    </svg>
+    <h2>W tym miejscu wybieramy metodę logowania</h2>
+    <img class="mid" src="images/p4z1.png" alt="">
+
+    <h2>W moim przypadku to będzie GitHub na, którym się loguję</h2>
+    <img class="mid" src="images/p4z2.png" alt="">
+
+    <h2>Teraz klikamy <span class="green">Authorize VisualStudioLiveShare</span></h2>
+    <img class="mid" src="images/p4z3.png" alt="">
+
+
+    <h2>Powinniśmy zobaczyć takie okno potwierdzające pomyślne połączenie naszego konta z usługą LiveShare</h2>
+    <img class="mid" src="images/p4z4.png" alt="">
+
+    <h2>w Visual Studio Code powinniśmy zobaczyć swój NICK</h2>
+    <img class="mid" src="images/p4z5.png" alt="">
+    <div class="kr"></div>
+  </section>
+</body>
+<script>
+  function myFunction() {
+    var x = document.getElementById("hide");
+    if (x.style.display == "none") {
+      x.style.display = "block";
+      document.querySelector("#arrow").style.transform = "rotate(180deg)";
+    } else {
+      x.style.display = "none";
+      document.querySelector("#arrow").style.transform = "rotate(0deg)";
+    }
+  }
+</script>
+<script>
+  const deg = 6;
+  const hr = document.querySelector('#hr');
+  const mn = document.querySelector('#mn');
+  const sc = document.querySelector('#sc');
+  const hhh = document.querySelector('.hour2');
+  const mmm = document.querySelector('.min2');
+  const sss = document.querySelector('.sec2');
+
+  setInterval(() => {
+      let day = new Date();
+      let hh = day.getHours() * 30;
+      let mm = day.getMinutes() * deg;
+      let ss = day.getSeconds() * deg;
+      let h = day.getHours();
+      let m = day.getMinutes();
+      let s = day.getSeconds();
+
+      hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+      mn.style.transform = `rotateZ(${(mm)}deg)`;
+      sc.style.transform = `rotateZ(${(ss)}deg)`;
+
+      // if(h<10) hhh.innerHTML = '0'+h;
+      // else hhh.innerHTML = h;
+      // if(m<10) mmm.innerHTML = '0'+m;
+      // else mmm.innerHTML = m;
+      // if(s<10) sss.innerHTML = '0'+s;
+      // else sss.innerHTML = s;
+  })
+</script>
+
+</html>
