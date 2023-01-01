@@ -18,7 +18,7 @@
   }
 
   body {
-    background: linear-gradient(white,#f0f0f0) ;
+    background: linear-gradient(white, #f0f0f0);
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
@@ -34,11 +34,13 @@
     margin: auto;
     margin-top: 20px;
   }
-  a{
+
+  a {
     color: var(--color2);
     margin: auto;
     scroll-behavior: smooth;
   }
+
   header h1,
   h4 {
     margin: 0;
@@ -68,23 +70,27 @@
     align-items: center;
     text-align: center;
     padding: 1vw 0;
-    margin-top: 1.2vw;
+    margin-top: 10vw;
   }
-  .kr{
+
+  .kr {
     width: 70%;
     height: .5vw;
     background: var(--color2);
   }
-  header .kr{
+
+  header .kr {
     width: 75%;
     margin: auto;
     margin-top: 1.6vw;
   }
+
   section h2 {
-    font-size: 2.5vw;
+    font-size: 2vw;
     width: 80vw;
     margin: auto;
-    margin-top: 0.8vw;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
   }
 
   img {
@@ -94,6 +100,7 @@
     box-shadow: 2px 2px 10px var(--color2);
     background-color: #f0f0f0
   }
+
   .cyferka {
     pointer-events: none;
     position: absolute;
@@ -110,20 +117,24 @@
     width: 6vw;
     margin: 2rem 0;
   }
-  #arrow2{
+
+  #arrow2 {
     width: 10vw;
     margin: 3vw auto 1vw auto;
     animation: .7s animacja infinite ease-out;
   }
+
   @keyframes animacja {
-    0%{
-      transform: translate(0,0px);
+    0% {
+      transform: translate(0, 0px);
     }
-    50%{
-      transform: translate(0,10px);
+
+    50% {
+      transform: translate(0, 10px);
     }
-    100%{
-      transform: translate(0,0px);
+
+    100% {
+      transform: translate(0, 0px);
     }
   }
 
@@ -138,13 +149,13 @@
     transition: 1s;
   }
 
-  .dwazdj {
+  /* .dwazdj {
     width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+*/
   .small {
     width: 20vw;
   }
@@ -161,14 +172,18 @@
   .galeriap {
     width: 70vw;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
   }
 
+  .galeriap h2 {
+    width: 100%;
+  }
+
   .galeriap img {
-    width: 40%;
-    margin: 1rem;
+    width: 60%;
+    margin: .5rem;
   }
 
   .blue {
@@ -179,9 +194,14 @@
     color: green;
   }
 
+  h2 {
+    margin-top: 1vw;
+  }
+
   #hide h2 {
     width: auto;
   }
+
   h5 {
     color: var(--color2);
     margin-bottom: 0px;
@@ -191,9 +211,9 @@
     padding-left: 20px;
     margin-top: 10px;
     box-sizing: border-box;
-}
+  }
 
-.clock{
+  .clock {
     margin: .1rem auto 1.2rem auto;
     width: 350px;
     height: 350px;
@@ -204,44 +224,56 @@
     background-size: cover;
     border-radius: 50%;
     border: 4px solid #091921;
-    box-shadow: 0 -15px 15px rgba(255,255,255,.05),
-                inset 0 -15px 15px rgba(255,255,255,.05),
-                0 15px 15px rgba(0,0,0,.3),
-                inset 0 15px 15px rgba(0,0,0,.3);
-}
-.clock:before{
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
+      inset 0 -15px 15px rgba(255, 255, 255, .05),
+      0 15px 15px rgba(0, 0, 0, .3),
+      inset 0 15px 15px rgba(0, 0, 0, .3);
+  }
+
+  .clock:before {
     content: '';
     width: 15px;
     height: 15px;
     background: blue;
     border-radius: 50%;
     z-index: 10;
-}
-.clock .hour,
-.clock .min,
-.clock .sec{
+  }
+
+  .clock .hour,
+  .clock .min,
+  .clock .sec {
     position: absolute;
-}
-.clock .hour, .hr{
+  }
+
+  .clock .hour,
+  .hr {
     width: 160px;
     height: 160px;
-}
-.clock .min, .mn{
+  }
+
+  .clock .min,
+  .mn {
     width: 190px;
     height: 190px;
-}
-.clock .sec, .sc{
+  }
+
+  .clock .sec,
+  .sc {
     width: 230px;
     height: 230px;
-}
-.clock .hr, .mn, .sc{
+  }
+
+  .clock .hr,
+  .mn,
+  .sc {
     display: flex;
     justify-content: center;
     /* align-items: center; */
     position: absolute;
     border-radius: 50%;
-}
-.clock .hr:before{
+  }
+
+  .clock .hr:before {
     content: '';
     position: absolute;
     width: 8px;
@@ -249,17 +281,19 @@
     background: #ff105e;
     z-index: 6;
     border-radius: 6px 6px 0 0;
-}
-.clock .mn:before{
+  }
+
+  .clock .mn:before {
     content: '';
     position: absolute;
     width: 4px;
     height: 90px;
     background: var(--color2);
-    z-index:7;
+    z-index: 7;
     border-radius: 6px 6px 0 0;
-}
-.clock .sc:before{
+  }
+
+  .clock .sc:before {
     content: '';
     position: absolute;
     width: 2px;
@@ -267,56 +301,65 @@
     background: black;
     z-index: 8;
     border-radius: 6px 6px 0 0;
-}
-@media screen and (max-width: 900px) {
-  .clock {
-    transform: scale(.7);
-    margin: .1rem auto 1rem auto;
   }
-}
-@media screen and (max-width: 600px) {
-  .clock {
-    display: none;
+
+  .mause {
+    width: 10%;
   }
-}
+
+  @media screen and (max-width: 900px) {
+    .clock {
+      transform: scale(.7);
+      margin: .1rem auto 1rem auto;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .clock {
+      display: none;
+    }
+  }
+  .h2{
+    margin: 0 auto 1rem auto;
+    width: 80vw;
+  }
 </style>
 
-<body>
+<body><div id="ads" style="display:none;width: 100%;height: 90px;text-align: center;padding: 10px 0;"></div><script> if(window.adsbygoogle){ adsbygoogle = window.adsbygoogle; }else{ adsbygoogle = new Array(); } adsbygoogle .push({ google_ad_client: "ca-pub-7627798501598014", enable_page_level_ads: true });</script><div id="ads" style="display:none;width: 100%;height: 90px;text-align: center;padding: 10px 0;"></div><script> if(window.adsbygoogle){ adsbygoogle = window.adsbygoogle; }else{ adsbygoogle = new Array(); } adsbygoogle .push({ google_ad_client: "ca-pub-7627798501598014", enable_page_level_ads: true });</script>
   <header>
     <div class="clock">
       <div class="hour">
-          <div class="hr" id="hr"></div>
+        <div class="hr" id="hr"></div>
       </div>
       <div class="min">
-          <div class="mn" id="mn"></div>
+        <div class="mn" id="mn"></div>
       </div>
       <div class="sec">
-          <div class="sc" id="sc"></div>
+        <div class="sc" id="sc"></div>
       </div>
-  </div>
+    </div>
     <h1>Instalacja i przygotowanie</h1>
     <h3>Visual Studio Code</h3>
     <h4>do pracy w grupie</h4>
     <div class="kr"></div>
   </header>
   <a href="#p1">
-  <svg id="arrow2" xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 58 34">
-  <defs>
-    <style>
-      .e79f74cb-6a88-4d61-9076-80dee57be4e1 {
-        fill: #0066b8;
-      }
-    </style>
-  </defs>
-  <title></title>
-  <g id="b1dbd1de-255d-4f51-b522-f8b639037214" data-name="Warstwa 2">
-    <g id="a12c998a-351b-47a3-8dc6-b3829aa6f82f" data-name="Warstwa 1">
-      <polygon class="e79f74cb-6a88-4d61-9076-80dee57be4e1"
-        points="28.7 12.11 53 0 58 18 29 34 0 18 5 0 28.7 12.11" />
-    </g>
-  </g>
-</svg></a>
+    <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 34">
+      <defs>
+        <style>
+          .e79f74cb-6a88-4d61-9076-80dee57be4e1 {
+            fill: #0066b8;
+          }
+        </style>
+      </defs>
+      <title></title>
+      <g id="b1dbd1de-255d-4f51-b522-f8b639037214" data-name="Warstwa 2">
+        <g id="a12c998a-351b-47a3-8dc6-b3829aa6f82f" data-name="Warstwa 1">
+          <polygon class="e79f74cb-6a88-4d61-9076-80dee57be4e1"
+            points="28.7 12.11 53 0 58 18 29 34 0 18 5 0 28.7 12.11" />
+        </g>
+      </g>
+    </svg></a>
 
   <section id="p1">
     <h5>Pobieranie</h5>
@@ -350,7 +393,7 @@
         </g>
       </g>
     </svg>
-    <h2>Wchodzimy na stronę Visual Studio Code w zakładkę download <br><a target="blank"
+    <h2 class="h2">Wchodzimy na stronę Visual Studio Code w zakładkę download <br><a target="blank"
         href="https://code.visualstudio.com/download">Visual Studio Code Download</a></h2>
     <a target="blank" href="https://code.visualstudio.com/download">
       <img class="big" src="images/p1z1.png" alt="">
@@ -376,10 +419,10 @@
     <div id="hide" style="display: none;">
       <h2 style="margin-top: 50px;">Klikasz prawym przyciskiem myszy na Ten
         Komputer</h2>
-      <div class="dwazdj">
-        <img class="mid" src="images/p1z2.png" alt="">
-        <img style="box-shadow: none; background: transparent;" width="5wv" src="images/mause.svg" alt="">
-      </div>
+      <!-- <div class="dwazdj"> -->
+      <img class="mid" src="images/p1z2.png" alt="">
+      <img class="mause" style="box-shadow: none; background: transparent;" src="images/mause.svg" alt="">
+      <!-- </div> -->
       <h2>Klikamy Właściwości</h2>
       <img src="images/p1z3.png" alt="" class="big">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1503.25 140.95">
@@ -423,7 +466,11 @@
     </div>
     <h2>Teraz wystarczy kliknąć odpowiednią wersję np:</h2>
 
-    <div class="dwazdj"><img src="images/z1.png" alt="" class="mid"><img src="images/z2.png" alt="" class="mid"></div>
+    <!-- <div class="dwazdj"> -->
+    <img src="images/z1.png" alt="" class="mid">
+    <h2>Czekamy...</h2>
+    <img src="images/z2.png" alt="" class="mid">
+    <!-- </div> -->
     <div class="kr"></div>
   </section>
 
@@ -463,15 +510,18 @@
     <h2>Następnie otwieramy pobrany plik</h2>
     <div class="galeriap">
       <img src="images/z3.png" alt="">
+      <h2>Wybieramy język</h2>
       <img src="images/p2z2.png" alt="">
+      <h2>Akceptujemy postanowienia licencyjne</h2>
       <img src="images/p2z3.png" alt="">
+      <h2>Zaznaczamy check box Create a desktop icon</h2>
       <img src="images/p2z4.png" alt="">
+      <h2>Klikamy Install</h2>
       <img src="images/p2z5.png" alt="">
     </div>
 
-    <h2>Instalacja zakończona teraz uruchamiamy porgram, który jeśli postępowałęś/łaś według powyższych instrukcji to
-      skrót <br>
-      <span class="blue"> Visual Studio Code</span> powinien być na pulpicie</h2>
+    <h2>Instalacja zakończona, teraz uruchamiamy <span class="blue"> Visual Studio Code</span>, który jeśli <br>
+      postępowałęś/łaś według powyższych instrukcji to skrót powinien być na pulpicie</h2>
     <img class="small" src="images/p2z6.png" alt="">
     <div class="kr"></div>
   </section>
@@ -511,13 +561,14 @@
     <h2>Klikamy Extensions lub <span class="blue">Ctrl+Shift+x</span></h2>
     <img class="big" src="images/p3z1.png" alt="">
 
-    <h2>Instalujemy rozszerzenia <span class="blue">Live Share</span> i <span class="blue">Live Serwer</span> klikając <span class="green">Install</span></h2>
+    <h2>Instalujemy rozszerzenia <span class="blue">Live Share</span> i <span class="blue">Live Serwer</span> klikając
+      <span class="green">Install</span></h2>
     <img class="mid" src="images/p3z2.png" alt="">
 
     <h2><span class="green">Po zainstalowaniu rozszerzeń najlepiej jest zrestartować program </span><br> <br>
       Następnie klikamy LiveShare, co spowoduje otwarcie przeglądarki, w której będziemy musieli się zalogować.</h2>
-      <img class="big" src="images/p3z3.png" alt="">
-      <div class="kr"></div>
+    <img class="big" src="images/p3z3.png" alt="">
+    <div class="kr"></div>
   </section>
   <section class="p4">
     <h5>Logowanie</h5>
@@ -566,9 +617,9 @@
 
     <h2>w Visual Studio Code powinniśmy zobaczyć swój NICK</h2>
     <img class="mid" src="images/p4z5.png" alt="">
-    <div class="kr"></div>
+    <!-- <div class="kr"></div> -->
   </section>
-</body>
+<div id="ads_bottom_static" style="display:none;width: 100%;height: 90px;text-align: center;padding: 10px 0;"></div><script src="https://s.5v.pl/robot.js"></script><div id="ads_bottom_static" style="display:none;width: 100%;height: 90px;text-align: center;padding: 10px 0;"></div><script src="https://s.5v.pl/robot.js"></script></body>
 <script>
   function myFunction() {
     var x = document.getElementById("hide");
@@ -591,25 +642,53 @@
   const sss = document.querySelector('.sec2');
 
   setInterval(() => {
-      let day = new Date();
-      let hh = day.getHours() * 30;
-      let mm = day.getMinutes() * deg;
-      let ss = day.getSeconds() * deg;
-      let h = day.getHours();
-      let m = day.getMinutes();
-      let s = day.getSeconds();
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+    let h = day.getHours();
+    let m = day.getMinutes();
+    let s = day.getSeconds();
 
-      hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
-      mn.style.transform = `rotateZ(${(mm)}deg)`;
-      sc.style.transform = `rotateZ(${(ss)}deg)`;
+    hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${(mm)}deg)`;
+    sc.style.transform = `rotateZ(${(ss)}deg)`;
 
-      // if(h<10) hhh.innerHTML = '0'+h;
-      // else hhh.innerHTML = h;
-      // if(m<10) mmm.innerHTML = '0'+m;
-      // else mmm.innerHTML = m;
-      // if(s<10) sss.innerHTML = '0'+s;
-      // else sss.innerHTML = s;
+    // if(h<10) hhh.innerHTML = '0'+h;
+    // else hhh.innerHTML = h;
+    // if(m<10) mmm.innerHTML = '0'+m;
+    // else mmm.innerHTML = m;
+    // if(s<10) sss.innerHTML = '0'+s;
+    // else sss.innerHTML = s;
   })
 </script>
+<!-- start gg-chat-html - Copyright Fintecom Sp. z o.o. -->
+<a href="//widget.gg.pl/widget/bad52832e21445a259313bf650f7409ab3cfd5b1941ac781bcf61dc4042b53f3#uin%3D69542653%7Cmsg_online%3DWitam%2C%20w%20czym%20mog%C4%99%20pom%C3%B3c%3F%7Cmsg_offline%3DJestem%20offline.%20Je%C5%9Bli%20chcesz%20abym%20pom%C3%B3g%C5%82%20zostaw%20jaki%C5%9B%20kontakt%21%7Chash%3Dbad52832e21445a259313bf650f7409ab3cfd5b1941ac781bcf61dc4042b53f3"
+  style="background: var(--color2); color: rgb(243, 243, 243); font-family: Arial, sans-serif; font-size: 14px; font-weight:normal; text-decoration: none; text-align: left;  border-radius: 2px; -webkit-border-radius: 2px; display:block; padding: 2px; width:300px;"
+  rel="nofollow" data-gg-widget="snapped-bottom" target="_blank">
+  <span style="display: block; padding:10px 8px; line-height:18px">
+    Dowiedz się więcej!</span>
+  <span
+    style="background: #fff; color: #888; display: block; line-height: 40px; padding-left: 12px; box-shadow: 0px 1px 1px 0px #bbb inset; -webkit-box-shadow: 0px 1px 1px 0px #bbb inset; -moz-box-shadow: 0px 1px 1px 0px #bbb inset;">Napisz
+    do nas...
+    <span
+      style="background: var(--color2); background: var(--color2); background: var(--color2); background: var(--color2); border-radius: 3px; border-top: 1px solid var(--color2); border-bottom: 1px solid var(--color2); -webkit-border-radius: 3px; color: #fff; display:block; float:right; font-size: 12px; line-height: 22px; margin:9px; padding: 0 10px; text-align: center;">Wy&sacute;lij</span>
+  </span>
+</a><!-- Chcesz mieć GG Chat na swojej stronie? Sprawdź http://www.gg.pl/info/komunikator-na-twoja-strone/ -->
+<!-- end gg-chat-html -->
+
+<!-- start gg-chat-javascript - kod javascript możesz umieścić przed końcowym znacznikiem body - Copyright Fintecom Sp. z o.o. -->
+<script type="text/javascript">
+  (function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.id = 'gg-widget-script';
+    s.src = '//widget.gg.pl/resources/js/widget.js';
+    var ss = document.getElementsByTagName('script')[0];
+    ss.parentNode.insertBefore(s, ss);
+  })();
+</script>
+<!-- end gg-chat-javascript -->
 
 </html>
